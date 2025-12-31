@@ -1,6 +1,7 @@
 name: Get Hot News
 
 on:
+  workflow_dispatch:
   push:        # <--- 加上这一行
   schedule:
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -37,8 +38,6 @@ on:
     #   "30 0-14 * * *"  → 北京时间 8:00-22:00 每小时第30分钟 / Beijing 8am-10pm
     #
     - cron: "33 * * * *"
-
-  workflow_dispatch:
 
 concurrency:
   group: crawler-${{ github.ref_name }}
